@@ -1,6 +1,20 @@
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
+void dfs(vector<vector<char>>& grid,vector<vector<int>>& vis,int row,int col){
+    vis[row][col]=1;
+    int n=grid.size();
+    int m=grid[0].size();
+    for(int delrow=-1; delrow<=1;delrow++){
+            for(int delcol=-1;delcol<=1;delcol++){
+                int neighrow= row+ delrow;
+                int neighcol= col+ delcol;
+                if(neighrow >=0 && neighrow < n && delcol >=0 && delcol <m && grid[neighrow][neighcol]=='1' && !vis[neighrow][neighcol]){
+                    dfs(grid,vis,neighrow,neighcol);
+                }
+            }
+        }
+}
 void bfs(int row,int col,vector<vector<char>>& grid,vector<vector<int>>&vis){
         vis[row][col]=1;
         int n=grid.size();
