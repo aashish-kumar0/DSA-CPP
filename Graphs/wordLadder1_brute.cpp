@@ -35,6 +35,5 @@ int main(){
    string endWord ="cog";
    vector<string>wordList ={"hot","dot","dog","lot","log","cog"};
    cout<<"the shortest sequence is "<<ladderLength(beginWord,endWord,wordList);
-
-return 0;
+   return 0;
 }
