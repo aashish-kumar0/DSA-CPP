@@ -33,6 +33,28 @@ int f(int row,int col,vector<vector<int>>& triangle,vector<vector<int>>&dp){
          }
          return dp[0][0];
      }
+     // space optimization
+     int minimumTotalS(vector<vector<int>>& triangle) {
+        int m=triangle.size();
+        vector<int>prev(m,0);
+        // base case
+        for(int j=0;j<m;j++){
+            prev[j]=triangle[m-1][j];
+        }
+
+        for(int i=m-2;i>=0;i--){
+            vector<int>curr(m,0);
+            for(int j=i;j>=0;j--){
+
+                int down= prev[j] + triangle[i][j];
+                int diag= prev[j+1] + triangle[i][j];
+
+                curr[j]=min(down,diag) ;
+            }
+            prev=curr;
+        }
+        return prev[0];
+    }
 
 
 int main(){
