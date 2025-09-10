@@ -24,15 +24,6 @@ void createTree(node *root, vector<int> &vec)
     root->right->left = newNode(vec[5]);
     root->right->right = newNode(vec[6]);
 }
-void createTree(node *root, vector<int> &vec)
-{
-    root->left = newNode(vec[1]);
-    root->right = newNode(vec[2]);
-    root->left->left = newNode(vec[3]);
-    root->left->right = newNode(vec[4]);
-    root->right->left = newNode(vec[5]);
-    root->right->right = newNode(vec[6]);
-}
 void inOrderTraversal(struct node *temp, vector<int> &inorder)
 {
     if (temp == NULL)
