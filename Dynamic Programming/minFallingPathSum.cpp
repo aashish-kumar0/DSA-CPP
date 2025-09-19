@@ -82,6 +82,11 @@ int f(int row,int col,vector<vector<int>>& matrix,vector<vector<int>>&dp){
             }
 
 int main(){
+    int n=4;
+vector<vector<int>>matrix={
+{1,2,10,4},{100,3,2,1},{1,1,20,2},{1,2,2,1}
+};
+cout<<minFallingPathSums(matrix);
 
 return 0;
 }
