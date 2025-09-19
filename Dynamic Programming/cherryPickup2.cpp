@@ -80,5 +80,6 @@ int f(vector<vector<int>>& grid,int i,int j1,int j2,int r,int c,vector<vector<ve
                     }
                 }
             }
-            return dp[0][0][m - 1];
+            int ans=dp[0][0][m-1];
+            return ans;
         }
